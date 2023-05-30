@@ -65,3 +65,29 @@ insert into Funcionario (RG,nome,cidade,salario)
 values(11111,'funcionario1','sao luis', 3000),(22222,'funcionario2','fortaleza',2000),(45678,'paciente4','sao paulo',899),
 (5555,'funcionario4', 'sao luis',1000)
 
+
+--------------------------------RESPOSTAS--------------------------------------
+
+--1)
+--select * from consulta where crm <> 123 and crm <> 456
+--select * from consulta where crm not in  (123,456)
+
+--2)
+--select * from ambulatorio where andar=4 and (capacidade=50 or num>10)
+
+--3)
+--select CRM, dataC from consulta where RG=122 or RG=725
+--select CRM, dataC from consulta where RG in (122, 725)
+
+--4)
+--select num from ambulatorio where capacidade>50 and andar not in (2, 4)
+
+--5)
+--select nome, datac from medico m, consulta c where m.crm=c.crm
+--select nome, datac from medico m join consulta c on m.crm=c.crm
+
+--6)
+--select a.num, capacidade, nome from ambulatorio a join medico m on a.num=m.num and a.num=1
+
+--7)
+
