@@ -87,7 +87,26 @@ values(11111,'funcionario1','sao luis', 3000),(22222,'funcionario2','fortaleza',
 --select nome, datac from medico m join consulta c on m.crm=c.crm
 
 --6)
---select a.num, capacidade, nome from ambulatorio a join medico m on a.num=m.num and a.num=1
+--select a.num, capacidade, nome from ambulatorio a join medico m on a.num=m.num and a.andar=1
 
 --7)
+--select m.nome as medico, p.nome as paciente, datac from consulta c, medico m, paciente p where c.crm=m.crm and c.rg=p.rg order by m.nome, p.nome
+--select m.nome as medico, p.nome as paciente, datac from consulta c join medico m on c.crm=m.crm join paciente p on c.rg=p.rg order by m.nome, p.nome
 
+--8)
+--select nome from medico m join consulta c on c.crm=m.crm and lower(especialidade)='ortopedista' and hora between 7 and 12 and datac = '05/21/2017'
+
+--9)
+--select distinct p.nome from paciente p join consulta c on p.rg=c.rg join medico m on m.crm=c.crm and (lower(m.nome)='joao carlos' or lower(m.nome)='maria souza') and lower(doença)='pneumonia'
+
+--10)
+--select f.nome, f.rg from funcionario f  where salario<900 and f.rg not in (select rg from paciente)
+
+--11)
+--select num from ambulatorio where num not in (select num from medico)
+--select num from ambulatorio except select num from medico
+
+--12)
+--select f.nome, f.rg from funcionario f join paciente p on f.rg=p.rg
+--select f.nome, f.rg from funcionario f where f.rg in (select rg from paciente)
+--select f.nome, f.rg from funcionario f intersect select p.nome, p.rg from paciente p
