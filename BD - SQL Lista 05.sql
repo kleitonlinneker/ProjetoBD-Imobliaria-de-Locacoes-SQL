@@ -75,3 +75,19 @@ insert into vendas (cpf, cnpj, cod_auto, datac, preco) values (1111,67890,5,'10/
 (4444,13456,2,'09/09/2019',54.000),(1111,12345,5,'11/05/2020',48.000),(4444,13456,3,'09/09/2019',38.500);
 
 -----------------------------------------------RESPOSTAS--------------------------------------------------
+--1)
+--select r.nome as revendedoras, c.nome as cidade from revendedoras r, CIDADE c where r.cod_cidade = c.cod_cidade
+
+--2)
+--select r.nome from revendedoras r, cidade c, estado e where r.cod_cidade = c.cod_cidade and c.cod_estado=e.cod_estado and e.nome='maranhao'
+
+--3)
+--select distinct a.fabricante, p.nome from automoveis a, pais p where a.cod_pais=p.cod_pais
+
+--4)
+--select c.nome, c.sobrenome from consumidores c where c.cpf not in (select v.cpf from vendas v)
+
+--5)
+select distinct c.nome from consumidores c, cidade cid, estado e where c.cod_cidade=cid.cod_cidade and cid.cod_estado=e.cod_estado and c.cpf in (select v.cpf from vendas v where v.cod_auto in (select a.cod_auto from automoveis a where a.modelo='uno' and a.fabricante='Fiat'))
+
+--6)
