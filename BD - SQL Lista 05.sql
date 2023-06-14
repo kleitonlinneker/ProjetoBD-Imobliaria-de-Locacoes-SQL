@@ -88,6 +88,19 @@ insert into vendas (cpf, cnpj, cod_auto, datac, preco) values (1111,67890,5,'10/
 --select c.nome, c.sobrenome from consumidores c where c.cpf not in (select v.cpf from vendas v)
 
 --5)
-select distinct c.nome from consumidores c, cidade cid, estado e where c.cod_cidade=cid.cod_cidade and cid.cod_estado=e.cod_estado and c.cpf in (select v.cpf from vendas v where v.cod_auto in (select a.cod_auto from automoveis a where a.modelo='uno' and a.fabricante='Fiat'))
+--select distinct c.nome from consumidores c, cidade cid, estado e where c.cod_cidade=cid.cod_cidade and cid.cod_estado=e.cod_estado and c.cpf in (select v.cpf from vendas v where v.cod_auto in (select a.cod_auto from automoveis a where a.modelo='uno' and a.fabricante='Fiat'))
 
 --6)
+--select r.* from revendedoras r where r.cnpj not in (select v.cnpj from vendas v, automoveis a, pais p where v.cod_auto=a.cod_auto and a.cod_pais=p.cod_pais and lower(p.nome)!='alemanha')
+
+--7)
+--select a.fabricante, a.modelo from automoveis a where a.cod_auto in (select v.cod_auto from vendas v where v.preco in (select min(preco) from vendas))
+
+--8)
+--select a.fabricante, a.modelo from automoveis a, vendas v where a.cod_auto=v.cod_auto and v.cnpj is not null
+
+--9)
+--select r.* from revendedoras r, vendas v, automoveis a where r.cnpj=v.cnpj and v.cod_auto=a.cod_auto and a.preco in (select max(a.preco) from automoveis a)
+
+--10)
+--select r.* from revendedoras r, vendas v where r.cnpj=v.cnpj and v.preco in (select max(v.preco) from vendas v)
