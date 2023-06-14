@@ -1,9 +1,10 @@
+'''sql
 create table ambulatorio(
 num integer, 
 andar integer, 
 capacidade integer,
 primary key(num));
-
+'''
 create table Medico (
 CRM integer, 
 nome varchar, 
