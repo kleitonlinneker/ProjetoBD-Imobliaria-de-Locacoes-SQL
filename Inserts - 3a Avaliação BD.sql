@@ -10,11 +10,11 @@ VALUES
 -- Inserção na tabela CORRETOR
 INSERT INTO CORRETOR (CRECI, ESPECIALIDADE, CPF)
 VALUES
-  (111, 'Vendas', 111111111),
-  (222, 'Locação', 222222222),
-  (333, 'Vendas', 333333333),
-  (444, 'Administração de Condomínios', 444444444),
-  (555, 'Vendas', 555555555);
+  (111, 'Casas', 111111111),
+  (222, 'Apartamentos', 222222222),
+  (333, 'Galpões', 333333333),
+  (444, 'Salas Comerciais', 444444444),
+  (555, 'Residencial em Geral', 555555555);
 
 -- Inserção na tabela FUNCIONARIO_ADM
 INSERT INTO FUNCIONARIO_ADM (MATRICULA, CARGO, CPF)
